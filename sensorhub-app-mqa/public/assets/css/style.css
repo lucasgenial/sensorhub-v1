@@ -1,0 +1,115 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.dashboard-header {
+    background-color: white;
+    border-bottom: 3px solid #4caf50;
+    padding: 8px 0;
+}
+
+.valign-wrapper {
+    margin-bottom: 0px !important;
+}
+
+.dashboard-header h5 {
+    margin: 0;
+    font-weight: 600;
+    color: #424242;
+}
+
+.dashboard-header p {
+    margin: 0;
+    color: #757575;
+}
+
+.section-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.card {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card .card-content {
+    padding: 20px 10px;
+}
+
+.tabs .tab a {
+    color: #fff;
+}
+
+.tabs .tab a:hover,
+.tabs .tab a.active {
+    background-color: #263238;
+    color: #fff;
+}
+
+.tabs .indicator {
+    background-color: #ffca28;
+}
+
+table.striped>tbody>tr:nth-child(odd) {
+    background-color: #eeeeee;
+}
+
+canvas {
+    margin-bottom: 40px;
+}
+
+.brand-logo {
+    font-size: 1.6rem;
+}
+
+.custom-nav {
+    background-color: #264653;
+    /* Azul petróleo elegante */
+    height: 48px;
+}
+
+.custom-nav .nav-wrapper {
+    height: 100%;
+}
+
+.custom-nav .tabs {
+    height: 100%;
+    margin: 0;
+}
+
+.custom-nav .tab {
+    height: 100%;
+}
+
+.custom-nav .nav-link {
+    color: white;
+    line-height: 48px;
+    font-weight: 500;
+    text-transform: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.custom-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (max-width: 600px) {
+    .dashboard-header img {
+        width: 70px;
+    }
+
+    .dashboard-header h5 {
+        font-size: 1.2rem;
+    }
+
+    .valign-wrapper {
+        margin-bottom: 0px !important;
+    }
+}

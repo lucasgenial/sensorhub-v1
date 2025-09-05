@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Miniestação Meteorológica – Escola do Campo</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" href="./assets/favicon/favicon-96x96.png" type="image/png">
+</head>
+
+<body>
+  <header class="dashboard-header">
+    <div class="container row valign-wrapper">
+      <div class="col s3 m2">
+        <img src="./assets/img/logo-cecet.png" alt="Logo CECET" class="responsive-img">
+      </div>
+      <div class="col s9 m10 center">
+        <h5>Painel de Monitoramento da Miniestação Meteorológica</h5>
+        <p>Projeto: Desenvolvimento de uma Miniestação Meteorológica de Baixo Custo</p>
+        <p>Escola do Campo Dr. Eraldo Tinoco</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="custom-nav">
+    <div class="nav-wrapper container">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#visao" class="nav-link">VISÃO GERAL</a></li>
+        <li class="tab"><a href="#graficos" class="nav-link">GRÁFICOS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="visao" class="col s12">
+      <h5 class="section-title">Visão Geral</h5>
+      <p>15/04/2025 - 10:12:24</p>
+      <div class="row">
+        <div class="col s12 m6 l4">
+          <div id="card-temperatura" class="card orange lighten-1 white-text">
+            <div class="card-content center">
+              <span class="card-title">Temperatura</span>
+              <h5>24,5°C</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div id="card-temperatura" class="card blue lighten-3 white-text">
+            <div class="card-content center">
+              <span class="card-title">Umidade Relativa</span>
+              <h5>89%</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div id="card-chuva" class="card light-blue white-text">
+            <div class="card-content center">
+              <span class="card-title">Precipitação</span>
+              <h5>1.0 mm</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div id="card-vento" class="card grey darken-1 white-text">
+            <div class="card-content center">
+              <span class="card-title">Velocidade do Vento</span>
+              <h5>6,4 km/h</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div id="card-direcao" class="card grey white-text">
+            <div class="card-content center">
+              <span class="card-title">Direção do Vento</span>
+              <h5>NE</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div id="card-pressao" class="card grey lighten-1 white-text">
+            <div class="card-content center">
+              <span class="card-title">Pressão Atmosférica</span>
+              <h5>1015 hPa</h5>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <div id="graficos" class="col s12">
+      <h5 class="section-title">Gráficos Temporais</h5>
+
+      <!-- Campos de Filtragem -->
+      <div class="row">
+        <div class="input-field col s12 m4">
+          <select id="filtro-periodo">
+            <option value="hoje" selected>Hoje</option>
+            <option value="semana">Esta semana</option>
+            <option value="personalizado">Personalizado</option>
+          </select>
+          <label>Período</label>
+        </div>
+
+        <div class="col s12 m8 range-personalizado" style="display: none;">
+          <div class="input-field col s6">
+            <input type="date" id="data-inicio" />
+            <label for="data-inicio">Data Início</label>
+          </div>
+
+          <div class="input-field col s6">
+            <input type="date" id="data-fim" />
+            <label for="data-fim">Data Fim</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráficos -->
+      <div class="row">
+        <div class="col s12"><canvas id="graficoTemperatura"></canvas></div>
+        <div class="col s12"><canvas id="graficoVento"></canvas></div>
+        <div class="col s12"><canvas id="graficoDirecao"></canvas></div>
+        <div class="col s12"><canvas id="graficoPressao"></canvas></div>
+        <div class="col s12"><canvas id="graficoChuva"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./assets/js/dashboard-estacao.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel SensorHub - Monitoramento de Hortas Experimentais </title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Monitora Salas" />
+  <link rel="manifest" href="./assets/favicon/web-app-manifest-512x512.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <header class="dashboard-header">
+    <div class="container row valign-wrapper">
+      <div class="col s3 m2">
+        <img src="./assets/img/logo-cecet.png" alt="Logo CECET" class="responsive-img">
+      </div>
+      <div class="col s9 m10 center">
+        <h5>Painel de Monitoramento de Hortas Experimentais</h5>
+        <p>Projeto de Monitoramento de Hortas Experimentais da Escola do Campo Dr. Eraldo Tinoco</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="custom-nav">
+    <div class="nav-wrapper container">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#visao" class="nav-link">VISÃO GERAL</a></li>
+        <li class="tab"><a href="#graficos" class="nav-link">GRÁFICOS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="visao" class="col s12">
+
+      <h5 class="section-title">Visão Geral</h5>
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div id="card-temperatura" class="card blue lighten-1 white-text">
+            <div class="card-content center">
+              <span class="card-title">Temperatura </span>
+              <h4>0?C</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div id="card-umidade" class="card purple lighten-1 white-text">
+            <div class="card-content center">
+              <span class="card-title">Umidade do Ar</span>
+              <h5>0%</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div id="card-umidade-solo-irrigado" class="card orange lighten-1 white-text">
+            <div class="card-content center">
+              <span class="card-title">Umidade Canteiro irrigado</span>
+              <h5>0%</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div id="card-umidade-nao-irrigado" class="card red lighten-1 white-text">
+            <div class="card-content center">
+              <span class="card-title">Umidade Canteiro NÃO irrigado</span>
+              <h5>0%</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m6 l6">
+        <div class="card-status-bomba" id="card-bomba">
+          <div class="overlay">
+            <h5 id="status-texto">Irrigação Status...</h5>
+            <p id="status-horario">--:--:--</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="graficos" class="col s12">
+      <h5 class="section-title">Gráficos Temporais</h5>
+
+      <!-- Campos de Filtragem -->
+      <div class="row">
+        <div class="input-field col s12 m4">
+          <select id="filtro-periodo">
+            <option value="hoje" selected>Hoje</option>
+            <option value="semana">Esta semana</option>
+            <option value="personalizado">Personalizado</option>
+          </select>
+          <label>Período</label>
+        </div>
+
+        <div class="col s12 m4 range-personalizado" style="display: none;">
+          <div class="input-field col s12 m6">
+            <input type="date" id="data-inicio" />
+            <label for="data-inicio">Data Início</label>
+          </div>
+        
+          <div class="input-field col s12 m6">
+            <input type="date" id="data-fim" />
+            <label for="data-fim">Data Fim</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <canvas id="graficoTemperatura"></canvas>
+        </div>
+        <div class="col s12">
+          <canvas id="graficoUmidadeAr"></canvas>
+        </div>
+        <div class="col s12">
+          <canvas id="graficoSoloUmido"></canvas>
+        </div>
+        <div class="col s12">
+          <canvas id="graficoSoloSeco"></canvas>
+        </div>
+        <div class="col s12">
+          <canvas id="graficoSoloComparativo"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./assets/js/visao-geral.js"></script>
+  <script src="./assets/js/charts-temporais.js"></script>
+</body>
+
+</html>
