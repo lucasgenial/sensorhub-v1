@@ -1,25 +1,24 @@
-# Logs
-logs
+# Dependências (qualquer nível)
+**/node_modules/
+
+# Logs, caches, builds comuns em Node
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-echo "node_modules/"
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+.pnpm-debug.log*
+.cache/
+dist/
+build/
+.out/
+.next/
+.nuxt/
+coverage/
+.tmp/
+.temp/
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# Variáveis de ambiente
+.env
+.env.*
